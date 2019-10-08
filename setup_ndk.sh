@@ -21,9 +21,6 @@ END
 
 echo ".cargo/config created successfully"
 
-sudo rm -f /usr/bin/aarch64-linux-android-clang
-sudo rm -f /usr/bin/aarch64-linux-android-ar
-sudo rm -f /usr/bin/aarch64-linux-android-strip
 sudo ln -s $LINKER /usr/bin/aarch64-linux-android-clang
 sudo ln -s $AR /usr/bin/aarch64-linux-android-ar
 sudo ln -s $STRIP /usr/bin/aarch64-linux-android-strip
