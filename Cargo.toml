@@ -1,0 +1,18 @@
+[package]
+name = "actix-bug"
+version = "0.1.0"
+authors = ["MooreDev <asya.corbeau@get-moore.com>"]
+edition = "2018"
+
+[dependencies]
+mio = "0.6.19"
+actix = "0.8.3"
+actix-web = {version="1.0.8", features = [ "client", "ssl" ]}
+actix-web-actors = {version = "1.0.2", features = []}
+actix-codec = {version="0.1.2", features = []}
+awc = { version = "0.2.7", features = []}
+futures = "0.1.29"
+flate2="1.0.12" 
+derive-new = "0.5.8"
+tokio = "0.1"
+env_logger = "0.6"
