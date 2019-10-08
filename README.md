@@ -4,17 +4,17 @@ Reproduce AARCH64 compilation error.
 # Prerequisites
 - last rust nightly installed (oct 2019)
 - AARCH64 target installd
-- last android ndk (r20) configured (take a look at seetup_ndk.sh, basicaly you must set the `NDK_SYSROOT` variable and linker/ar binaries in the `.cargo/config`, for examplee linker must be `toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang` for targetting api 29)
+- last android ndk (r20) configured (take a look at seetup_ndk.sh, basicaly you must set the `NDK_SYSROOT` variable and linker/ar binaries in the `.cargo/config`, for examplee linker must be `toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang` to target api 29)
 
 # Reproduction steeps
-- Setup the `.cargo/config` using to use android NDK clang for api 29
+- Setup the `.cargo/config` to use android NDK with `API 29`
 ```
 [target.aarch64-linux-android]
 linker = "[NDK LOCATION]/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android29-clang"
 ar =  "[NDK LOCATION]/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar"
 rustflags = []
 ```
-- Run the makefile (this do a `cargo +nightly build` with staticaly linked openssl library for aarch64)
+- Run the makefile (this do a `cargo +nightly build` with staticaly linked openssl library)
 ```bash
 make
 ```
